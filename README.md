@@ -1,5 +1,7 @@
 # PHP Cache Proxy
 
+[![Build Status](https://travis-ci.org/MimaTomis/CacheProxy.svg)](https://travis-ci.org/MimaTomis/CacheProxy)
+
 ## About library
 
 Proxying calls to any functions to retrieve data from the cache.
