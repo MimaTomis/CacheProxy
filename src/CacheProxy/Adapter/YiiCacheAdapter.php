@@ -41,4 +41,14 @@ class YiiCacheAdapter implements CacheAdapterInterface
     {
         $this->cache->save($key, $data, $ttl);
     }
+
+    /**
+     * Delete data from cache
+     *
+     * @param string $key
+     */
+    public function delete($key)
+    {
+        $this->cache->delete($key);
+    }
 }

@@ -15,4 +15,12 @@ interface ProxyInterface
      * @return mixed
      */
     public function proxyTarget(ProxyTargetInterface $target, $key = null, $ttl = 0);
+
+    /**
+     * Flush all data from cache
+     *
+     * @param ProxyTargetInterface $target
+     * @param string|null $key
+     */
+    public function flushTarget(ProxyTargetInterface $target, $key = null);
 }

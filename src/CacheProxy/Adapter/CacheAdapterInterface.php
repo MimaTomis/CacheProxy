@@ -21,4 +21,11 @@ interface CacheAdapterInterface
      * @param int $ttl
      */
     public function save($key, $data, $ttl = 0);
+
+    /**
+     * Delete data from cache
+     *
+     * @param string $key
+     */
+    public function delete($key);
 }

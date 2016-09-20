@@ -78,6 +78,25 @@ class ProxyTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($return, $data);
     }
 
+    /**
+     * @dataProvider callableProviders
+     *
+     * @param callable $fn
+     * @param array $arguments
+     */
+    public function testFlush(callable $fn, array $arguments)
+    {
+        $this->adapter
+            ->expects($this->once())
+            ->method('delete')
+            ->with(
+                $this->isType('string')
+            );
+
+        $method = new ProxyTarget($fn, $arguments);
+        $this->cacheProxy->flushTarget($method);
+    }
+
     public function callableProviders()
     {
         $target = new CacheProxyTarget();

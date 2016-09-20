@@ -39,6 +39,19 @@ class Proxy implements ProxyInterface
     }
 
     /**
+     * Flush all data from cache
+     *
+     * @param ProxyTargetInterface $target
+     * @param string|null $key
+     */
+    public function flushTarget(ProxyTargetInterface $target, $key = null)
+    {
+        $key = $this->generateCacheKey($target, $key);
+
+        $this->cacheAdapter->delete($key);
+    }
+
+    /**
      * Call method in target context
      *
      * @param ProxyTargetInterface $target
