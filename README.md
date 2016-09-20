@@ -27,6 +27,11 @@ Add dependency on your composer.json:
 
 ### Using
 
+* [Update cache and retrieve data](#update-cache-and-retrieve-data)
+* [Flush data from cache](#flush-data-from-cache)
+
+#### Update cache and retrieve data
+
 Create new instance of `CacheProxy\Proxy` class:
 
 ```php
@@ -102,4 +107,17 @@ To set the *ttl* for storing data in cache, pass third argument to `CacheProxy\P
 ```php
 $ttl = 3600;
 $cacheProxy->proxyTarget($target, null, $ttl);
+```
+
+#### Flush data from cache
+
+If you want remove all cache data, do as shown below:
+
+```php
+// this code update cache ad return data
+$key = md5('any-key');
+$cacheProxy->proxyTarget($target, null, $ttl);
+
+// this code flush all data from cache by target and key
+$cacheProxy->flushTarget($target, $key);
 ```
