@@ -1,6 +1,6 @@
 # PHP Cache Proxy
 
-[![Build Status](https://travis-ci.org/MimaTomis/CacheProxy.svg)](https://travis-ci.org/MimaTomis/CacheProxy)
+[![Build Status](https://travis-ci.org/MimaTomis/cache-proxy.svg)](https://travis-ci.org/MimaTomis/cache-proxy)
 
 ## About library
 
